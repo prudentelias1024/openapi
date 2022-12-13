@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="stylesheet"  href="/css/input.css"/>
+    <link rel="stylesheet"  href="/css/fontawesome.css"/>
+    <link rel="stylesheet"  href="/css/all.css"/>
+    <script src="/js/index.js" defer></script>
+</head>
+
+<body  class="sm:overflow-x-hidden z-0">
+    
+    <div  class="nav">
+        <div class="logo">
+            <p class="app__title w-full px-4 text-2xl  md:ml-3 md:text-2xl md:w-3/4 ml-[-3.5em]">
+                OpenAPI 
+               </p>
+        </div>
+    
+        <div 
+       
+        class="link absolute right-32 ">
+        <i onClick="openNav()" class="cursor-pointer fa fa-ellipsis-h md:hidden ml-[10em]" aria-hidden="true"></i>
+         <div id="mobile__nav" class="hidden md:hidden fixed left-[8em] w-full mt-[-2em] h-[41em] z-50  bg-[#f4f4f4] text-black">
+            <p onClick="closeNav()" class="cursor-pointer absolute close font-[mulish] right-40 top-16">
+                Close
+            </p>
+            <ul
+     
+            class="flex flex-col gap-12 mt-1 -ml-50 font-bold p-[10em]">
+                
+                <li><a class="hover:text-[#8f8d8d]" href="#">Home</a></li>
+                <li><a class="hover:text-[#8f8d8d]" href="#resources">How To</a></li>
+                <li><a class="hover:text-[#8f8d8d]" href="/docs">Documentation</a></li>
+                <li><a class="hover:text-[#8f8d8d]" href="#services">Github</a></li>
+                  </ul>
+         </div>
+        <ul
+     
+        class="nav__link hidden md:flex flex-row gap-10 mt-1 -ml-50 font-bold ">
+            
+            <li><a href="#">Home</a></li>
+            <li><a href="#resources">How To</a></li>
+            <li><a href="/docs">Documentation</a></li>
+            <li><a href="#services">Github</a></li>
+              </ul>
+          </div>
+        </div> 
+
+        <div class="hero">
+            <div style="display: flex; flex-direction: row;" class="flex flex-row">
+              <div class="app__details ml-[-1em] md:p-20">
+               
+                  <p
+               
+                  class="app__subtitle  ml-4 px-4 py-1 md:w-2/3 font-bold text-xl  md:text-5xl mt-8 md:mt-4">
+                    Before You Create A Real Backend, use OpenAPI to build up your prototype
+                     </p>
+              </div>
+              <div class="hero__image">
+               <img  src="/images/pro.jpg" class=" md:-ml-14 mt-2 w-[33em] h-full object-cover" alt="" />
+               
+              </div>
+              </div>
+              <div class="more flex flex-col mb-10">
+                <p class='font-semibold text-center mt-32 mb-3 text-3xl font-[Gabriola] w-4/5 md:ml-[4em] ml-[1.5em]   '>Wanna Build Visual Appealing Prototype With No Backend???</p>
+                <p class="text-center md:px-52 font-[Mulish] text-[1.2em] font-light w-4/5 ml-[2em] md:ml-[6em]">
+                  Creating A Real Backend takes a lot of time but you don't have to wait before building a real backend. OpenAPI supports a large set of data for your prototype and fakes a real backend.
+                </p>
+              </div>
+              
+              <div class="example__code ml-[-.5em] w-full py-4 px-1">
+                <p class="title font-extrabold font-[Nunito] text-2xl text-[#512bd4] ml-[.5em] md:ml-[10em]
+                mb-[.5em]
+                md:mb-[1em]">Example Code</p>
+                <div class="code__container bg-[#333] text-white px-4 md:p-15 w-full md:w-3/5 ml-[.5em] md:ml-[15em] rounded-md ">
+                <p id="copy__code" class=' code p-16  md:py-10 md:px-40 font-xl font-normal '>
+                    fetch('https://openapi.com/products/1')
+                        .then(res=>res.json( )
+                        )
+                        .then(json=>console.log(json)
+                        ) 
+                        </p>
+                </div>
+                 <button  class='bg-[#512bd4] text-white rounded-xl p-3 mt-6 ml-[.6em] md:ml-[15em]' onclick="copyCode()">Copy Code</button>
+              </div>
+            
+              <div id="resources" class=" resources mt-[3em] ml-[-2em] mb-[2em]">
+                <p class="title font-extrabold font-[Nunito] text-2xl text-[#512bd4] ml-[2em] md:ml-[12em]
+                mb-[1em]">Resources</p>
+                <p class=" font-light font-[Nunito] text-[1em] ml-[3em]  md:ml-[18em]
+                mb-[1em] ">List of all resources that you can access in our REST API </p>
+                <div class="resource__list flex flex-row ml-[-7em] md:ml-[9em]">
+                    <p class="route font-extrabold font-[Nunito] text-[1em] text-[#512bd4] ml-[11em]
+                mb-[1em]">/products</p>
+                    <p class=
+                    "font-extrabold font-[Nunito] text-[1em] text-[#000] ml-[9em]"> 20 Products</p>
+                </div> 
+                <div class="resource__list flex flex-row ml-[-7em] md:ml-[9em]">
+                    <p class="route font-extrabold font-[Nunito] text-[1em] text-[#512bd4] ml-[11em]
+                mb-[1em]">/todos</p>
+                    <p class=
+                    "font-extrabold font-[Nunito] text-[1em] text-[#000] ml-[11em]"> 20 Todos</p>
+                </div> 
+                <div class="resource__list flex flex-row ml-[-7em] md:ml-[9em]">
+                    <p class="route font-extrabold font-[Nunito] text-[1em] text-[#512bd4] ml-[11em]
+                mb-[1em]">/users</p>
+                    <p class=
+                    "font-extrabold font-[Nunito] text-[1em] text-[#000] ml-[11em]"> 20 Users</p>
+                </div> 
+                <!-- <div class="resource__list flex flex-row ml-[9em]">
+                    <p class="route font-extrabold font-[Nunito] text-[1em] text-[#512bd4] ml-[11em]
+                mb-[1em]">/products</p>
+                    <p class=
+                    "font-extrabold font-[Nunito] text-[1em] text-[#000] ml-[11em]"> 100 Products</p>
+                </div>  -->
+                
+                <!-- <div class="resource__list flex flex-row ml-[9em]">
+                    <p class="route font-extrabold font-[Nunito] text-[1em] text-[#512bd4] ml-[11em]
+                mb-[1em]">/products</p>
+                    <p class=
+                    "font-extrabold font-[Nunito] text-[1em] text-[#000] ml-[11em]"> 100 Products</p>
+                </div> 
+            </div>
+        -->
+        </div>
+        <div class="routes ml-[-2.5em] mt-20">
+            <p class="title font-extrabold font-[Nunito] text-2xl text-[#512bd4] ml-[2.5em] md:ml-[12.5em]
+            mb-[1em]">Routes</p>
+            <p class=" font-light font-[Nunito] text-[1em]  
+            ml-[4em]
+            mb-[1.5em]
+            md:ml-[19em]
+            md:mb-[1em]">List of Http Methods our API supports </p>
+            <div class="resource__list flex flex-row ml-[-7em] md:ml-[8em]">
+                <p class="route font-extrabold font-[Nunito] text-[1em] text-[#512bd4] ml-[11em]
+                mb-[1em]">GET</p>
+                <p class=
+                "font-extrabold font-[Nunito] text-[1em] text-[#508cb9] ml-[11em]">/products</p>
+            </div> 
+            <div class="resource__list flex flex-row ml-[-7em] md:ml-[8em]">
+                <p class="route font-extrabold font-[Nunito] text-[1em] text-[#512bd4] ml-[11em]
+            mb-[1em]">GET</p>
+                <p class=
+                "font-extrabold font-[Nunito] text-[1em] text-[#508cb9] ml-[11em]">/todos</p>
+            </div> 
+        
+            <div class="resource__list flex flex-row ml-[-7em] md:ml-[8em]">
+                <p class="route font-extrabold font-[Nunito] text-[1em] text-[#512bd4] ml-[11em]
+            mb-[1em]">GET</p>
+                <p class=
+                "font-extrabold font-[Nunito] text-[1em] text-[#508cb9] ml-[11em]">/users</p>
+            </div> 
+        
+            <div class="resource__list flex flex-row ml-[-7em] md:ml-[8em]">
+                    <p class="route font-extrabold font-[Nunito] text-[1em] text-[#512bd4] ml-[11em]
+                mb-[1em]">POST</p>
+                    <p class=
+                    "font-extrabold font-[Nunito] text-[1em] text-[#508cb9] ml-[10.25em]">/products</p>
+                </div> 
+                <div class="resource__list flex flex-row ml-[-7em] md:ml-[8em]">
+                    <p class="route font-extrabold font-[Nunito] text-[1em] text-[#512bd4] ml-[11em]
+                mb-[1em]">GET</p>
+                    <p class=
+                    "font-extrabold font-[Nunito] text-[1em] text-[#508cb9] ml-[11em]">/products/1</p>
+                </div> 
+                <div class="resource__list flex flex-row ml-[-7em] md:ml-[8em]">
+                    <p class="route font-extrabold font-[Nunito] text-[1em] text-[#512bd4] ml-[11em]
+                mb-[1em]">DELETE</p>
+                    <p class=
+                    "font-extrabold font-[Nunito] text-[1em] text-[#508cb9] ml-[9em]">/products/1</p>
+                </div> 
+                <div class="resource__list flex flex-row ml-[-7em] md:ml-[8em]">
+                    <p class="route font-extrabold font-[Nunito] text-[1em] text-[#512bd4] ml-[11em]
+                mb-[1em]">PUT</p>
+                    <p class=
+                    "font-extrabold font-[Nunito] text-[1em] text-[#508cb9] ml-[10.5em]">/products/1/price</p>
+                </div> 
+                <div class="resource__list flex flex-row ml-[-7em] md:ml-[8em]">
+                    <p class="route font-extrabold font-[Nunito] text-[1em] text-[#512bd4] ml-[11em]
+                mb-[1em]">GET</p>
+                    <p class=
+                    "font-extrabold font-[Nunito] text-[1em] text-[#508cb9] ml-[11em]">/products</p>
+                </div> 
+             
+              <button  class='bg-[#512bd4] text-white rounded-xl px-8 py-3 mt-6 ml-[3.5em] md:ml-[17em] mb-[2em]'> <a href="/docs"> Read Docs </a></button>
+   
+            </div>
+
+            <footer class="bg-[#9800ff] w-full text-white text-center font-[Mulish]">
+                <a href="#" >Buy Me A Coffee</a>
+            </footer>
+</body>
+</html>

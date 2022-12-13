@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.app__name {
+
+    font-family: Mulish;
+    margin-left: -7em;
+   --tw-text-opacity: 1;
+    color: rgb(0 0 0 / var(--tw-text-opacity));
+    font-weight: 700;
+    font-size: 1.5rem/* 24px */;
+    line-height: 2rem/* 32px */;
+    margin-top: -0.5rem/* -8px */;
+
+}
+.nav {
+    display:flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 1.5rem;
+    padding-left: 8rem/* 128px */;
+    padding-right: 8rem/* 128px */;
+}
+
+.nav__link {
+    font-family: Mulish;
+}
+.app__title{
+    font-family: Mulish;
+line-height: 1.5em;
+}
+.app__subtitle{
+    /* font-family: Ink Free; */
+    font-family: Gabriola;
+}
+.code{
+    text-indent: -4em;
+}
+.code {
+    color: rgb(231, 231, 231);
+    font-weight: 600;
+    letter-spacing: .05em;
+    word-spacing: .5em;
+}
+.show{
+   opacity: 1;
+    filter: blur(0);
+    transform: translateX(0)
+   
+}
+/* .code {
+    opacity: 0;
+    transition: all 1s;
+     transform: translateX(20%);    
+     filter: blur(8px);
+} */

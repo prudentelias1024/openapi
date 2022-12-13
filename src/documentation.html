@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation</title>
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+   
+    <div  class="nav">
+        <div class="logo">
+            <p class="app__title w-full px-4 text-2xl md:ml-3 md:text-2xl md:w-3/4 ml-[-3.5em]">
+                OpenAPI 
+               </p>
+        </div>
+    
+        <div 
+       
+        class="link absolute right-32 ">
+        <ul
+     
+        class="nav__link hidden md:flex flex-row gap-10 mt-1 -ml-50 font-bold ">
+            
+            <li><a href="#">Home</a></li>
+            <li><a href="#resources">How To</a></li>
+            <li><a href="/docs">Documentation</a></li>
+            <li><a href="#services">Github</a></li>
+              </ul>
+          </div>
+        </div> 
+
+    <div class="how__to__use mt-12">
+        <!-- OpenAPI is curated for developers looking for a fake backend to create a prototyping model of their front-end designs before they create a real backend service or purchase one  -->
+        <p style="line-height: 2em;" class="w-3/5 text-center font-bold   font-[Nunito] text-[1.2em] 
+        ml-[4.5em]
+        sm:ml-[5em]
+        md:ml-[14em] 
+        mb-[4em] "> Here are the lists and overview of all the HTTP methods our API accepts </p>
+    </div>
+
+<div class="example__code px-1 py-5 md:py-10 md:px-16 ml-[-2em]">
+        <p class="title ml-[2.5em] font-extrabold font-[Nunito] text-xl text-[#512bd4] md:ml-[12em]
+        mb-[1em]">Get all products</p>
+        <div class="code__container bg-[#333] text-white px-4 md:p-15 w-[25em] md:w-3/5 ml-[3em] md:ml-[15em] rounded-md ">
+            <p  class='code px-20 py-16 mr-[2em] md:py-10 md:px-40 font-xl font-normal '>
+        
+            fetch('https://openapi.com/products')
+                .then(res=>res.json( )
+                )
+                .then(json=>console.log(json)
+                ) 
+                </p>
+        </div>
+        <button class='bg-[#512bd4] text-white rounded-xl p-3 mt-6 ml-[2.5em] md:ml-[15em]'>Copy Code</button>
+            
+</div>
+
+ 
+<div class="example__code px-1 py-5 mt-[1em] md:py-10 md:px-16 ml-[-2em]">
+                <p class="title font-extrabold font-[Nunito] text-xl text-[#512bd4] ml-[2.5em] md:ml-[10em]
+                mb-[.5em]
+                md:mb-[1em]">Get a single product</p>
+                <div class="code__container bg-[#333] text-white px-4 md:p-15 w-[25em] md:w-3/5 ml-[3em] md:ml-[15em] rounded-md ">
+                    <p  class=' code p-20  md:py-10 md:px-40 font-xl font-normal '>
+                
+        fetch('https://openapi.com/products/1')
+            .then(res=>res.json( )
+            )
+            .then(json=>console.log(json)
+            ) 
+            </p>
+    </div>
+    <button class='bg-[#512bd4] text-white rounded-xl p-3 mt-6 ml-[2.5em] md:ml-[15em]'>Copy Code</button>
+    </div>    
+
+ <div class="example__code py-10 px-3 ml-[-.5em]">
+                <p class="title font-extrabold font-[Nunito] text-2xl text-[#512bd4] ml-[.75em] md:ml-[10em] 
+                mb-[.5em]
+                md:mb-[1em]">Get certain number of products</p>
+                <div class="code__container bg-[#333] text-white px-16 md:p-15 w-[25em] md:w-3/5 ml-[.5em] md:ml-[15em] rounded-md ">
+                    <p  class=' code p-20 ml-[-3em]  md:py-10 md:px-40 font-xl font-normal '>
+                
+        fetch('https://openapi.com/products/max=5')
+            .then(res=>res.json( )
+            )
+            .then(json=>console.log(json)
+            ) 
+            </p>
+    </div>
+    <button class='bg-[#512bd4] text-white rounded-xl p-3 mt-6 ml-[0.5em] md:ml-[15em]'>Copy Code</button>
+         
+</div>
+
+     <div class="example__code py-10 px-16 ml-[-3.2em]">
+                <p class="title font-extrabold font-[Nunito] text-2xl text-[#512bd4] ml-[.75em] md:ml-[10em]
+                mb-[.5em]
+                md:mb-[1em]">Add a product</p>
+                <div class="code__container bg-[#333] text-white px-4 md:p-15 w-[25em] md:w-3/5 ml-[.5em] md:ml-[15em] rounded-md ">
+                    <p  class=' code p-20  md:py-10 md:px-40 font-xl font-normal '>
+                
+        fetch('https://openapi.com/products/1', {
+            method: "POST",
+            body: JSON.stringify({
+                id: 21,
+                name: "Nike Boots",
+                size: "S",
+                catchword: "Nice boots!",
+                productOwner: "Finn Blake",
+                dateUploaded: "Sept 13, 2003"
+            })
+        })
+            .then(res=>res.json( )
+            )
+            .then(json=>console.log(json)
+            ) 
+            </p>
+    </div>
+    <button class='bg-[#512bd4] text-white rounded-xl p-3 mt-6 ml-[1em] md:ml-[15em]'>Copy Code</button>
+         
+</div>
+
+     <div class="example__code py-10 px-8 ml-[-1.5em]">
+                <p class="title font-extrabold font-[Nunito] text-2xl text-[#512bd4] ml-[.75em] md:ml-[10em]
+                mb-[.5em]
+                md:mb-[1em]">Change a product's price</p>
+                <div class="code__container bg-[#333] text-white px-4 md:p-15 w-[25em] md:w-3/5 ml-[.5em] md:ml-[15em] rounded-md ">
+                    <p  class=' code p-16  md:py-10 md:px-40 font-xl font-normal '>
+                
+        fetch('https://openapi.com/products/1/price', {
+            method: "PUT",
+            body: JSON.stringify({
+                price: "$43.21",
+              
+            })
+        })
+            .then(res=>res.json( )
+            )
+            .then(json=>console.log(json)
+            ) 
+            </p>
+    </div>
+    <button class='bg-[#512bd4] text-white rounded-xl p-3 mt-6 ml-[.5em] md:ml-[15em]'>Copy Code</button>
+</div>
+
+
+     <div class="example__code py-10 px-16 ml-[-3.5em]">
+                <p class="title font-extrabold font-[Nunito] text-2xl text-[#512bd4] ml-[.75em] md:ml-[10em]
+                mb-[.5em]
+                md:mb-[1em]">Update a product</p>
+                <div class="code__container bg-[#333] text-white px-4 md:p-15 w-[25em] md:w-3/5 ml-[.5em] md:ml-[15em] rounded-md ">
+                    <p  class=' code p-20  md:py-10 md:px-40 font-xl font-normal '>
+                
+        fetch('https://openapi.com/products/1', {
+            method: "PUT",
+            body: JSON.stringify({
+                id: 21,
+                name: "Nike Boots",
+                size: "S",
+                catchword: "Nice boots!",
+                productOwner: "Finn Blake",
+                dateUploaded: "Sept 13, 2003"
+            })
+        })
+            .then(res=>res.json( )
+            )
+            .then(json=>console.log(json)
+            ) 
+            </p>
+    </div>
+    <button class='bg-[#512bd4] text-white rounded-xl p-3 mt-6 ml-[0.5em] md:ml-[15em]'>Copy Code</button>
+         
+</div>
+
+
+     <div class="example__code py-10 px-16 ml-[-3em]">
+                <p class="title font-extrabold font-[Nunito] text-2xl text-[#512bd4] ml-[.75em] md:ml-[10em]
+                mb-[.5em]
+                md:mb-[1em]">Delete a product</p>
+                <div class="code__container bg-[#333] text-white px-4 md:p-15 w-[25em] md:w-3/5 ml-[.5em] md:ml-[15em] rounded-md ">
+                    <p  class=' code p-16  md:py-10 md:px-40 font-xl font-normal '>
+                
+        fetch('https://openapi.com/products/1', {
+            method: "DELETE",
+            body: " "
+        })
+            .then(res=>res.json( )
+            )
+            .then(json=>console.log(json)
+            ) 
+            </p>
+    </div>
+    <button class='bg-[#512bd4] text-white rounded-xl p-3 mt-6 ml-[0.5em] md:ml-[15em]'>Copy Code</button>
+      
+</div>
+
+<!-- Todo -->
+     <div class="example__code py-10 px-16 ml-[-3em]">
+                <p class="title font-extrabold font-[Nunito] text-2xl text-[#512bd4] ml-[.75em] md:ml-[10em]
+                mb-[.5em]
+                md:mb-[1em]">Get all todos</p>
+                <div class="code__container bg-[#333] text-white px-4 md:p-15 w-[25em] md:w-3/5 ml-[.5em] md:ml-[15em] rounded-md ">
+                    <p  class=' code p-16  md:py-10 md:px-40 font-xl font-normal '>
+                
+        fetch('https://openapi.com/todos')
+            .then(res=>res.json( )
+            )
+            .then(json=>console.log(json)
+            ) 
+            </p>
+    </div>
+    <button class='bg-[#512bd4] text-white rounded-xl p-3 mt-6 ml-[0.5em] md:ml-[15em]'>Copy Code</button>
+      
+</div>
+
+     <div class="example__code py-10 px-16 ml-[-3em]">
+                <p class="title font-extrabold font-[Nunito] text-2xl text-[#512bd4] ml-[.75em] md:ml-[10em]
+                mb-[.5em]
+                md:mb-[1em]">Get a todo task</p>
+                <div class="code__container bg-[#333] text-white px-4 md:p-15 w-[25em] md:w-3/5 ml-[.5em] md:ml-[15em] rounded-md ">
+                    <p  class=' code p-16  md:py-10 md:px-40 font-xl font-normal '>
+                
+        fetch('https://openapi.com/todos/1')
+            .then(res=>res.json( )
+            )
+            .then(json=>console.log(json)
+            ) 
+            </p>
+    </div>
+    <button class='bg-[#512bd4] text-white rounded-xl p-3 mt-6 ml-[0.5em] md:ml-[15em]'>Copy Code</button>
+      
+</div>
+
+     <div class="example__code py-10 px-16 ml-[-3em]">
+                <p class="title font-extrabold font-[Nunito] text-2xl text-[#512bd4] ml-[.75em] md:ml-[10em]
+                mb-[.5em]
+                md:mb-[1em]">Add a todo</p>
+                <div class="code__container bg-[#333] text-white px-4 md:p-15 w-[25em] md:w-3/5 ml-[.5em] md:ml-[15em] rounded-md ">
+                    <p  class=' code p-16  md:py-10 md:px-40 font-xl font-normal '>
+                
+        fetch('https://openapi.com/todos/1', {
+            method: "POST",
+            body: JSON.stringify({
+                id: 21,
+                task: "Buy Bitcoin", 
+                completed: false
+            })
+        })
+            .then(res=>res.json( )
+            )
+            .then(json=>console.log(json)
+            ) 
+            </p>
+    </div>
+    <button class='bg-[#512bd4] text-white rounded-xl p-3 mt-6 ml-[0.5em] md:ml-[15em]'>Copy Code</button>
+      
+</div>
+
+     <div class="example__code py-10 px-16 ml-[-3em]">
+                <p class="title font-extrabold font-[Nunito] text-2xl text-[#512bd4] ml-[.75em] md:ml-[10em]
+                mb-[.5em]
+                md:mb-[1em]">Complete a Task</p>
+                <div class="code__container bg-[#333] text-white px-4 md:p-15 w-[25em] md:w-3/5 ml-[.5em] md:ml-[15em] rounded-md ">
+                    <p  class=' code p-16  md:py-10 md:px-40 font-xl font-normal '>
+                
+        fetch('https://openapi.com/todo/1/completed, {
+            method: "PUT"
+           
+        })
+            .then(res=>res.json( )
+            )
+            .then(json=>console.log(json)
+            ) 
+            </p>
+    </div>
+    <button class='bg-[#512bd4] text-white rounded-xl p-3 mt-6 ml-[0.5em] md:ml-[15em]'>Copy Code</button>
+      
+</div>
+
+     <div class="example__code py-10 px-16 ml-[-3em]">
+                <p class="title font-extrabold font-[Nunito] text-2xl text-[#512bd4] ml-[.75em] md:ml-[10em]
+                mb-[.5em]
+                md:mb-[1em]">Delete a Todo task </p>
+                <div class="code__container bg-[#333] text-white px-4 md:p-15 w-[25em] md:w-3/5 ml-[.5em] md:ml-[15em] rounded-md ">
+                    <p  class=' code p-16  md:py-10 md:px-40 font-xl font-normal '>
+                
+        fetch('https://openapi.com/todos/1', {
+            method: "DELETE",
+            body: " "
+        })
+            .then(res=>res.json( )
+            )
+            .then(json=>console.log(json)
+            ) 
+            </p>
+    </div>
+    <button class='bg-[#512bd4] text-white rounded-xl p-3 mt-6 ml-[0.5em] md:ml-[15em]'>Copy Code</button>
+      
+</div>
+
+
+<!-- User -->
+     <div class="example__code py-10 px-16 ml-[-3em]">
+                <p class="title font-extrabold font-[Nunito] text-2xl text-[#512bd4] ml-[.75em] md:ml-[10em]
+                mb-[.5em]
+                md:mb-[1em]">Get all users</p>
+                <div class="code__container bg-[#333] text-white px-4 md:p-15 w-[25em] md:w-3/5 ml-[.5em] md:ml-[15em] rounded-md ">
+                    <p  class=' code p-16  md:py-10 md:px-40 font-xl font-normal '>
+                
+        fetch('https://openapi.com/users')
+            .then(res=>res.json( )
+            )
+            .then(json=>console.log(json)
+            ) 
+            </p>
+    </div>
+    <button class='bg-[#512bd4] text-white rounded-xl p-3 mt-6 ml-[0.5em] md:ml-[15em]'>Copy Code</button>
+      
+</div>
+
+     <div class="example__code py-10 px-16 ml-[-3em]">
+                <p class="title font-extrabold font-[Nunito] text-2xl text-[#512bd4] ml-[.75em] md:ml-[10em]
+                mb-[.5em]
+                md:mb-[1em]">Get a user by ID</p>
+                <div class="code__container bg-[#333] text-white px-4 md:p-15 w-[25em] md:w-3/5 ml-[.5em] md:ml-[15em] rounded-md ">
+                    <p  class=' code p-16  md:py-10 md:px-40 font-xl font-normal '>
+                
+        fetch('https://openapi.com/users/1')
+            .then(res=>res.json( )
+            )
+            .then(json=>console.log(json)
+            ) 
+            </p>
+    </div>
+    <button class='bg-[#512bd4] text-white rounded-xl p-3 mt-6 ml-[0.5em] md:ml-[15em]'>Copy Code</button>
+      
+</div>
+
+     <div class="example__code py-10 px-10 md:py-10 md:px-16 ml-[-1.8em]">
+                <p class="title font-extrabold font-[Nunito] text-2xl text-[#512bd4] ml-[.75em] md:ml-[10em]
+                mb-[.5em]
+                md:mb-[1em]">Create a user</p>
+                <div class="code__container bg-[#333] text-white px-4 md:p-15 w-[25em] md:w-3/5 ml-[.5em] md:ml-[15em] rounded-md ">
+                    <p  class=' code p-16  md:py-10 md:px-40 font-xl font-normal '>
+                
+        fetch('https://openapi.com/todos/1', {
+            method: "POST",
+            body: JSON.stringify({
+                id: 21,
+                gender: "Female", 
+                "firstname": "Celine",
+                "lastname": "Spears",
+                "fullname": "Celine Spears",
+                "username": "CS1024",
+                "profile_image": "http://goggle.com/2",
+                "password": "poweroflove2"
+            })
+        })
+            .then(res=>res.json( )
+            )
+            .then(json=>console.log(json)
+            ) 
+            </p>
+    </div>
+    <button class='bg-[#512bd4] text-white rounded-xl p-3 mt-6 ml-[0.5em] md:ml-[15em]'>Copy Code</button>
+      
+</div>
+
+     <div class="example__code py-10 px-16 ml-[-3em]">
+                <p class="title font-extrabold font-[Nunito] text-2xl text-[#512bd4] ml-[.75em] md:ml-[10em]
+                mb-[.5em]
+                md:mb-[1em]">Get a user by Username</p>
+                <div class="code__container bg-[#333] text-white px-4 md:p-15 w-[25em] md:w-3/5 ml-[.5em] md:ml-[15em] rounded-md ">
+                    <p  class=' code p-16  md:py-10 md:px-40 font-xl font-normal '>
+                
+        fetch('https://openapi.com/users/Jaxbryton1')
+            .then(res=>res.json( )
+            )
+            .then(json=>console.log(json)
+            ) 
+            </p>
+    </div>
+    <button class='bg-[#512bd4] text-white rounded-xl p-3 mt-6 ml-[0.5em] md:ml-[15em]'>Copy Code</button>
+      
+</div>
+
+     <div class="example__code py-5 px-8  md:py-10 md:px-16 ml-[-1em]">
+                <p class="title font-extrabold font-[Nunito] text-2xl text-[#512bd4] ml-[.75em] md:ml-[10em]
+                mb-[.5em]
+                md:mb-[1em]">Get a user by Email</p>
+                <div class="code__container bg-[#333] text-white px-0 md:p-15 h-full w-[25em] md:w-3/5 ml-[.5em] md:ml-[15em] rounded-md ">
+                    <p  class=' code p-16  md:py-10 md:px-40 font-xl font-normal ml-[.5em] '>
+                
+         fetch('https://openapi.com/users/bryton1@gmail.com')
+            .then(res=>res.json( )
+            )
+            .then(json=>console.log(json)
+            ) 
+            </p>
+    </div>
+      <button class='bg-[#512bd4] text-white rounded-xl p-3 mt-6 ml-[0.5em] md:ml-[15em]'>Copy Code</button>
+      
+</div>
+
+     <div class="example__code py-10 px-16 ml-[-3.5em]">
+                <p class="title font-extrabold font-[Nunito] text-2xl text-[#512bd4] ml-[.75em] md:ml-[10em]
+                mb-[.5em]
+                md:mb-[1em]">Delete a User </p>
+                <div class="code__container bg-[#333] text-white px-4 md:p-15 w-[25em] md:w-3/5 ml-[.5em] md:ml-[15em] rounded-md ">
+                    <p  class=' code p-16  md:py-10 md:px-40 font-xl font-normal '>
+                
+        fetch('https://openapi.com/users/1', {
+            method: "DELETE",
+            body: " "
+        })
+            .then(res=>res.json( )
+            )
+            .then(json=>console.log(json)
+            ) 
+            </p>
+    </div>
+    <button class='bg-[#512bd4] text-white rounded-xl p-3 mt-6 ml-[0.5em] md:ml-[15em]'>Copy Code</button>
+      
+</div>
+<footer class="bg-[#9800ff] w-full text-white text-center font-[Mulish]">
+    <a href="#" >Buy Me A Coffee</a>
+</footer>
+   </body>
+</html>
