@@ -1,7 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+body{
+    font-family: Nunito;
+}
 .app__name {
 
     font-family: Mulish;
@@ -27,7 +29,7 @@
     font-family: Mulish;
 }
 .app__title{
-    font-family: Mulish;
+    font-family: Josefin Sans;
 line-height: 1.5em;
 }
 .app__subtitle{
@@ -48,6 +50,10 @@ line-height: 1.5em;
     filter: blur(0);
     transform: translateX(0)
    
+}
+.nav__link > li > a
+{
+    font-family: Josefin Sans;
 }
 /* .code {
     opacity: 0;
