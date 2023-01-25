@@ -1,7 +1,10 @@
 {
     "name": "openapi",
     "version": "0.1.0",
-    "private": true,
+    "description": "Open API for developers",
+    "engines": {
+        "node": "14.x"
+    },
     "scripts": {
         "watch": "npx tailwindcss -i ./src/css/input.css -o ./src/css/index.css --watch"
     },
