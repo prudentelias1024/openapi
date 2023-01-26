@@ -4,14 +4,14 @@ const userAPI = express.Router()
 
 
 app.get('/', (req,res) => {
-    fs.readFile('./users.json', 'utf-8', (err,data) => {
+    fs.readFile('../users.json', 'utf-8', (err,data) => {
      if(!err) {res.send(JSON.parse(data))} else {console.log(err)}
     })
  })
 
  app.get('/:property', (req,res) =>{
     let products
-    fs.readFile('./users.json', 'utf-8', (err,data) => {
+    fs.readFile('../users.json', 'utf-8', (err,data) => {
         if(!err) {
             let property = req.params.property
             console.log(property)
@@ -53,17 +53,17 @@ app.post('/', (req,res) => {
     if (req.body.id !== null && req.body.firstname !== null && req.body.lastname !== null && req.body.username !== null && req.body.gender !== null && req.body.email !== null && req.body.profile_image !== null && req.body.password) {
     
     let users; 
-    fs.readFile('./users.json', 'utf-8', (err,data) => {
+    fs.readFile('../users.json', 'utf-8', (err,data) => {
         if(!err) {
             console.log(req.body)
         users = [...JSON.parse(data), req.body]
       
         console.log(users)
         users = JSON.stringify(users)
-        fs.writeFile('./users.json',users, 'utf-8', (err) =>{
+        fs.writeFile('../users.json',users, 'utf-8', (err) =>{
             if(err) {console.log(err)}
         })   
-        fs.readFile('./users.json', 'utf-8', (err,data) => {
+        fs.readFile('../users.json', 'utf-8', (err,data) => {
             if(!err) {res.send({data: data})} else {console.log(err)}
            })
     } else {console.log(err)}
@@ -77,17 +77,17 @@ app.post('/', (req,res) => {
 
 app.delete('/:id',(req,res) => {
     const id = Number(req.params.id)
-   fs.readFile('./users.json', 'utf-8', (err,data) => {
+   fs.readFile('../users.json', 'utf-8', (err,data) => {
          if(!err) {
              let users = [...JSON.parse(data).filter((user) => {
                  return user.id !== id
              })]
              users = JSON.stringify(users)
              console.log(users)
-         fs.writeFile('./users.json',users, 'utf-8', (err) =>{
+         fs.writeFile('../users.json',users, 'utf-8', (err) =>{
              if(err) {console.log(err)}
          })   
-         fs.readFile('./users.json', 'utf-8', (err,data) => {
+         fs.readFile('../users.json', 'utf-8', (err,data) => {
              if(!err) {res.send(data)} else {console.log(err)}
             })
  }
@@ -96,7 +96,7 @@ app.delete('/:id',(req,res) => {
  
 
  app.get('/:username', (req,res) =>{
-    fs.readFile('./users.json', 'utf-8', (err,data) => {
+    fs.readFile('../users.json', 'utf-8', (err,data) => {
         if(!err) {
             const username = req.params.username
             
@@ -112,7 +112,7 @@ app.delete('/:id',(req,res) => {
 })
 
 app.get('/:email', (req,res) =>{
-    fs.readFile('./users.json', 'utf-8', (err,data) => {
+    fs.readFile('../users.json', 'utf-8', (err,data) => {
         if(!err) {
             const email = req.params.email
             

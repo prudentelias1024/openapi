@@ -6,13 +6,14 @@ const todoAPI = express.Router()
 
 
 app.get('/', (req,res) => {
-    fs.readFile('./todos.json', 'utf-8', (err,data) => {
-     if(!err) {res.send(JSON.parse(data))} else {console.log(err)}
+    console.time()
+    fs.readFile('../todos.json', 'utf-8', (err,data) => {
+     if(!err) {res.send(JSON.parse(data)); } else {console.log(err)}
     })
  })
  app.get('/:id', (req,res) =>{
     time()
-    fs.readFile('./todos.json', 'utf-8', (err,data) => {
+    fs.readFile('../todos.json', 'utf-8', (err,data) => {
         if(!err) {
             const id = req.params.id
             
@@ -35,17 +36,17 @@ app.post('/', (req,res) => {
      ) {
     
     let products; 
-    fs.readFile('./todos.json', 'utf-8', (err,data) => {
+    fs.readFile('../todos.json', 'utf-8', (err,data) => {
         if(!err) {
             console.log(req.body)
         todos = [...JSON.parse(data), req.body]
       
         console.log(todos)
         todos = JSON.stringify(todos)
-        fs.writeFile('./todos.json',todos, 'utf-8', (err) =>{
+        fs.writeFile('../todos.json',todos, 'utf-8', (err) =>{
             if(err) {console.log(err)}
         })   
-        fs.readFile('./todos.json', 'utf-8', (err,data) => {
+        fs.readFile('../todos.json', 'utf-8', (err,data) => {
             if(!err) {res.send(data)} else {console.log(err)}
            })
     } else {console.log(err)}
@@ -60,17 +61,17 @@ app.post('/', (req,res) => {
 
 app.delete('/:id',(req,res) => {
     const id = Number(req.params.id)
-   fs.readFile('./todos.json', 'utf-8', (err,data) => {
+   fs.readFile('../todos.json', 'utf-8', (err,data) => {
          if(!err) {
              let todos = [...JSON.parse(data).filter((todo) => {
                  return todo.id !== id
              })]
              todos = JSON.stringify(todos)
              console.log(todos)
-         fs.writeFile('./todos.json',todos, 'utf-8', (err) =>{
+         fs.writeFile('../todos.json',todos, 'utf-8', (err) =>{
              if(err) {console.log(err)}
          })   
-         fs.readFile('./todos.json', 'utf-8', (err,data) => {
+         fs.readFile('../todos.json', 'utf-8', (err,data) => {
              if(!err) {res.send(data)} else {console.log(err)}
             })
  }
@@ -83,17 +84,17 @@ app.put('/:id/completed', (req,res) =>
 {
     const id = Number(req.params.id);
     console.log(id)
-    fs.readFile('./todos.json', 'utf-8', (err,data) => {
+    fs.readFile('../todos.json', 'utf-8', (err,data) => {
     let todos = JSON.parse(data).filter((todo) => {
          if(todo.id == id){ todo.completed = !todo.completed } 
          return data
     })
     console.log(todos)
     todos = JSON.stringify(todos);
-    fs.writeFile('./todos.json',todos, 'utf-8', (err) =>{
+    fs.writeFile('../todos.json',todos, 'utf-8', (err) =>{
         if(err) {console.log(err)}
     })   
-    fs.readFile('./todos.json', 'utf-8', (err,data) => {
+    fs.readFile('../todos.json', 'utf-8', (err,data) => {
         if(!err) {res.send(data)} else {console.log(err)}
        })
 
