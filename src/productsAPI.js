@@ -4,14 +4,14 @@ const app = express()
 const productsAPI = express.Router()
 
 app.get('/', (req,res) => {
-    fs.readFile('../products.json', 'utf-8', (err,data) => {
+    fs.readFile('/products.json', 'utf-8', (err,data) => {
      if(!err) {res.send(JSON.parse(data));
      } else {console.log(err)}
     })
  })
 
  app.get('/:id', (req,res) =>{
-    fs.readFile('../products.json', 'utf-8', (err,data) => {
+    fs.readFile('/products.json', 'utf-8', (err,data) => {
         if(!err) {
             const id = req.params.id
             
@@ -39,17 +39,17 @@ app.post('/', (req,res) => {
     if (req.body.id !== null && req.body.name !== null && req.body.price !== null && req.body.price !== null && req.body.catchword !== null && req.body.productOwner !== null && req.body.dateUploaded !== null) {
     
     let products; 
-    fs.readFile('../products.json', 'utf-8', (err,data) => {
+    fs.readFile('/products.json', 'utf-8', (err,data) => {
         if(!err) {
             console.log(req.body)
         products = [...JSON.parse(data), req.body]
       
         console.log(products)
         products = JSON.stringify(products)
-        fs.writeFile('../products.json',products, 'utf-8', (err) =>{
+        fs.writeFile('/products.json',products, 'utf-8', (err) =>{
             if(err) {console.log(err)}
         })   
-        fs.readFile('../products.json', 'utf-8', (err,data) => {
+        fs.readFile('/products.json', 'utf-8', (err,data) => {
             if(!err) {res.send({data: data})} else {console.log(err)}
            })
     } else {console.log(err)}
@@ -64,17 +64,17 @@ app.post('/', (req,res) => {
 
 app.delete('/:id',(req,res) => {
     const id = Number(req.params.id)
-   fs.readFile('../products.json', 'utf-8', (err,data) => {
+   fs.readFile('/products.json', 'utf-8', (err,data) => {
          if(!err) {
              let products = [...JSON.parse(data).filter((product) => {
                  return product.id !== id
              })]
              products = JSON.stringify(products)
              console.log(products)
-         fs.writeFile('../products.json',products, 'utf-8', (err) =>{
+         fs.writeFile('/products.json',products, 'utf-8', (err) =>{
              if(err) {console.log(err)}
          })   
-         fs.readFile('../products.json', 'utf-8', (err,data) => {
+         fs.readFile('/products.json', 'utf-8', (err,data) => {
              if(!err) {res.send(data)} else {console.log(err)}
             })
  }
@@ -87,17 +87,17 @@ app.put('/:id/price', (req,res) =>
 {
     const id = Number(req.params.id);
    
-    fs.readFile('../products.json', 'utf-8', (err,data) => {
+    fs.readFile('/products.json', 'utf-8', (err,data) => {
     let products = JSON.parse(data).filter((product) => {
          if(product.id == id){ product.price = req.body.price } 
          return data
     })
     console.log(products)
     products = JSON.stringify(products);
-    fs.writeFile('../products.json',products, 'utf-8', (err) =>{
+    fs.writeFile('/products.json',products, 'utf-8', (err) =>{
         if(err) {console.log(err)}
     })   
-    fs.readFile('../products.json', 'utf-8', (err,data) => {
+    fs.readFile('/products.json', 'utf-8', (err,data) => {
         if(!err) {res.send(data)} else {console.log(err)}
        })
 
@@ -113,7 +113,7 @@ app.put('/:id', (req,res) => {
     if (req.body.id !== null && req.body.name !== null && req.body.price !== null && req.body.price !== null && req.body.catchword !== null && req.body.productOwner !== null && req.body.dateUploaded !== null && req.body.size !== null) {
 
    let products; 
-    fs.readFile('../products.json', 'utf-8', (err,data) => {
+    fs.readFile('/products.json', 'utf-8', (err,data) => {
         if(!err) {
             console.log(data)
             products =JSON.parse(data).filter((product) => {
@@ -130,10 +130,10 @@ app.put('/:id', (req,res) => {
                 
            })
            products = [...products,]
-        fs.writeFile('../products.json',JSON.stringify(products), 'utf-8', (err) =>{
+        fs.writeFile('/products.json',JSON.stringify(products), 'utf-8', (err) =>{
             if(err) {console.log(err)}
         })   
-        fs.readFile('../products.json', 'utf-8', (err,data) => {
+        fs.readFile('/products.json', 'utf-8', (err,data) => {
             if(!err) {res.send( data)} else {console.log(err)}
            })
     } else {console.log(err)}
