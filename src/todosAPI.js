@@ -4,12 +4,12 @@ const todoAPI = express.Router()
 
 
 
-app.get('/todos', (req,res) => {
+app.get('/', (req,res) => {
     fs.readFile('./todos.json', 'utf-8', (err,data) => {
      if(!err) {res.send(JSON.parse(data))} else {console.log(err)}
     })
  })
- app.get('/todos/:id', (req,res) =>{
+ app.get('/:id', (req,res) =>{
     fs.readFile('./todos.json', 'utf-8', (err,data) => {
         if(!err) {
             const id = req.params.id
@@ -26,7 +26,7 @@ app.get('/todos', (req,res) => {
 
 
 
-app.post('/todos', (req,res) => {
+app.post('/', (req,res) => {
     
     if (req.body.id !== null && req.body.task !== null && req.body.completed !== null
      ) {
@@ -55,7 +55,7 @@ app.post('/todos', (req,res) => {
 })
 
 
-app.delete('/todos/:id',(req,res) => {
+app.delete('/:id',(req,res) => {
     const id = Number(req.params.id)
    fs.readFile('./todos.json', 'utf-8', (err,data) => {
          if(!err) {
@@ -76,7 +76,7 @@ app.delete('/todos/:id',(req,res) => {
  
 
  
-app.put('/todos/:id/completed', (req,res) => 
+app.put('/:id/completed', (req,res) => 
 {
     const id = Number(req.params.id);
     console.log(id)

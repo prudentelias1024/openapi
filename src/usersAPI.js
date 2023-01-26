@@ -3,13 +3,13 @@ const app = express()
 const userAPI = express.Router()
 
 
-app.get('/users', (req,res) => {
+app.get('/', (req,res) => {
     fs.readFile('./users.json', 'utf-8', (err,data) => {
      if(!err) {res.send(JSON.parse(data))} else {console.log(err)}
     })
  })
 
- app.get('/users/:property', (req,res) =>{
+ app.get('/:property', (req,res) =>{
     let products
     fs.readFile('./users.json', 'utf-8', (err,data) => {
         if(!err) {
@@ -40,7 +40,7 @@ app.get('/users', (req,res) => {
 })
 
 
-app.get('/users/profile/:img', (req,res) => {
+app.get('/profile/:img', (req,res) => {
     const img = req.params.img;
     fs.readFile(`./src/images/users/${img}`, (err,data) => {
         if(!err){res.send(data)} else {console.log(err)}
@@ -49,7 +49,7 @@ app.get('/users/profile/:img', (req,res) => {
 
 
 
-app.post('/users', (req,res) => {
+app.post('/', (req,res) => {
     if (req.body.id !== null && req.body.firstname !== null && req.body.lastname !== null && req.body.username !== null && req.body.gender !== null && req.body.email !== null && req.body.profile_image !== null && req.body.password) {
     
     let users; 
@@ -75,7 +75,7 @@ app.post('/users', (req,res) => {
     }
 })
 
-app.delete('/users/:id',(req,res) => {
+app.delete('/:id',(req,res) => {
     const id = Number(req.params.id)
    fs.readFile('./users.json', 'utf-8', (err,data) => {
          if(!err) {
@@ -95,7 +95,7 @@ app.delete('/users/:id',(req,res) => {
  })
  
 
- app.get('/users/:username', (req,res) =>{
+ app.get('/:username', (req,res) =>{
     fs.readFile('./users.json', 'utf-8', (err,data) => {
         if(!err) {
             const username = req.params.username
@@ -111,7 +111,7 @@ app.delete('/users/:id',(req,res) => {
    
 })
 
-app.get('/users/:email', (req,res) =>{
+app.get('/:email', (req,res) =>{
     fs.readFile('./users.json', 'utf-8', (err,data) => {
         if(!err) {
             const email = req.params.email

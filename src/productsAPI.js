@@ -2,13 +2,13 @@ const express = require('express');
 const app = express()
 const productsAPI = express.Router()
 
-app.get('/products', (req,res) => {
+app.get('/', (req,res) => {
     fs.readFile('./products.json', 'utf-8', (err,data) => {
      if(!err) {res.send(JSON.parse(data))} else {console.log(err)}
     })
  })
 
- app.get('/products/:id', (req,res) =>{
+ app.get('/:id', (req,res) =>{
     fs.readFile('./products.json', 'utf-8', (err,data) => {
         if(!err) {
             const id = req.params.id
@@ -33,7 +33,7 @@ app.get('/product/:img', (req,res) => {
 })
 
 
-app.post('/products', (req,res) => {
+app.post('/', (req,res) => {
     if (req.body.id !== null && req.body.name !== null && req.body.price !== null && req.body.price !== null && req.body.catchword !== null && req.body.productOwner !== null && req.body.dateUploaded !== null) {
     
     let products; 
@@ -60,7 +60,7 @@ app.post('/products', (req,res) => {
 })
 
 
-app.delete('/products/:id',(req,res) => {
+app.delete('/:id',(req,res) => {
     const id = Number(req.params.id)
    fs.readFile('./products.json', 'utf-8', (err,data) => {
          if(!err) {
@@ -81,7 +81,7 @@ app.delete('/products/:id',(req,res) => {
 
  
  
-app.put('/products/:id/price', (req,res) => 
+app.put('/:id/price', (req,res) => 
 {
     const id = Number(req.params.id);
    
@@ -106,7 +106,7 @@ app.put('/products/:id/price', (req,res) =>
     
 })
 
-app.put('/products/:id', (req,res) => {
+app.put('/:id', (req,res) => {
     const id = req.params.id
     if (req.body.id !== null && req.body.name !== null && req.body.price !== null && req.body.price !== null && req.body.catchword !== null && req.body.productOwner !== null && req.body.dateUploaded !== null && req.body.size !== null) {
 

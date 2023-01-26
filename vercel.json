@@ -8,9 +8,14 @@
     ],
     "routes": [
         {
-            "src": "/.*",
+            "src": "/(.*)",
             "dest": "/server.js"
-    }
+    }, 
+    { "src": "/todos", "methods": ["POST","PUT", "GET", "DELETE"], "dest": "./todoAPI.js" },
+        
+    { "src": "/products", "methods": ["POST","PUT", "GET", "DELETE"], "dest": "./productsAPI.js" },
+        
+    { "src": "/users", "methods": ["POST","PUT", "GET", "DELETE"], "dest": "./usersAPI.js" }
         
     
     ]
