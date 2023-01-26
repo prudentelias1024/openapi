@@ -1,3 +1,4 @@
+const { time, timeEnd } = require('console');
 const express = require('express');
 const app = express()
 const todoAPI = express.Router()
@@ -10,6 +11,7 @@ app.get('/', (req,res) => {
     })
  })
  app.get('/:id', (req,res) =>{
+    time()
     fs.readFile('./todos.json', 'utf-8', (err,data) => {
         if(!err) {
             const id = req.params.id
@@ -17,7 +19,8 @@ app.get('/', (req,res) => {
             const product = JSON.parse(data).filter((product) => {
                 return product.id == id
             })
-             res.send(product)
+             res.send(product);
+             timeEnd()
             
             }
        })

@@ -1,10 +1,12 @@
+const { time, timeEnd } = require('console');
 const express = require('express');
 const app = express()
 const productsAPI = express.Router()
 
 app.get('/', (req,res) => {
     fs.readFile('./products.json', 'utf-8', (err,data) => {
-     if(!err) {res.send(JSON.parse(data))} else {console.log(err)}
+     if(!err) {res.send(JSON.parse(data));
+     } else {console.log(err)}
     })
  })
 
