@@ -6,6 +6,7 @@
         "node": "14.x"
     },
     "scripts": {
+        "start": "node server.js",
         "watch": "npx tailwindcss -i ./src/css/input.css -o ./src/css/index.css --watch"
     },
     "dependencies": {
