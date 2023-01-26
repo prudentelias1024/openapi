@@ -11,11 +11,11 @@
             "src": "/(.*)",
             "dest": "/server.js"
     }, 
-    { "src": "/todos", "methods": ["POST","PUT", "GET", "DELETE"], "dest": "/src/todoAPI.js" },
+    { "src": "/todos", "methods": ["POST","PUT", "GET", "DELETE"], "dest": "/server.js" },
         
-    { "src": "/products", "methods": ["POST","PUT", "GET", "DELETE"], "dest": "/src/productsAPI.js" },
+    { "src": "/products", "methods": ["POST","PUT", "GET", "DELETE"], "dest": "/server.js" },
         
-    { "src": "/users", "methods": ["POST","PUT", "GET", "DELETE"], "dest": "/src/usersAPI.js" }
+    { "src": "/users", "methods": ["POST","PUT", "GET", "DELETE"], "dest": "/server.js" }
         
     
     ]
